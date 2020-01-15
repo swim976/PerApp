@@ -14,6 +14,7 @@ class UserInfo(models.Model):
     )
     detail = models.TextField(verbose_name='用户描述', null=True, blank=True, help_text='描述用户特征')
     sex = models.IntegerField(choices=sex_choices, verbose_name='性别')
+    age = models.IntegerField(verbose_name='年龄')
 
     class Meta:
         verbose_name = '用户信息'
@@ -21,3 +22,5 @@ class UserInfo(models.Model):
 
     def __str__(self):
         return self.name
+
+

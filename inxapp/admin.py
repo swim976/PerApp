@@ -20,12 +20,14 @@ from import_export.admin import ImportExportModelAdmin, ImportExportActionModelA
 #     list_per_page = 15
 
 class UserInfoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'sex', 'tel', 'detail', 'create_date']  # 显示表列
+    list_display = ['id', 'name', 'age', 'sex', 'tel', 'detail', 'create_date']  # 显示表列
     search_fields = ['name', 'create_date']
-    list_editable = ['sex', 'tel', 'detail']
+    list_editable = ['sex', 'tel', ]
     list_display_links = ['name', ]
     list_filter = []
     list_per_page = 15
+    # 正序
+    ordering = ['id']
 
 
 admin.site.register(UserInfo, UserInfoAdmin)

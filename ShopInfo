@@ -1,0 +1,7 @@
+id	int（10）	主键（自增）	商品在数据库中的编码
+title	varchar（100）	商品名称
+img	varchar（255）	商品主图	建议采用路径存储url
+price	decimal （10，2）	商品最低价	为了吸引用户进入浏览 给出最低配置甚至配件价格
+desc	varchar（255）	商品描述	商品简介，广告词等
+status	tinyint （1）	产品状态	状态：-1 已删除 0 下架 1 上架
+add_time	int（10）	发布时间	添加时间

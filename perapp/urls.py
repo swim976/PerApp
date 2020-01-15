@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from perapp import settings
 
 admin.site.site_title = 'WJ后台管理系统'
 admin.site.site_header = 'WJ管理系统'
 
 urlpatterns = [
     path('', admin.site.urls),
-]
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

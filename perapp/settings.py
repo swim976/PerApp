@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inxapp',
+    'shopapp',
+    'ckeditorapp',
+    'ckeditor_uploader',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -120,9 +124,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# 图片地址
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
+# ckeditor 配置
+LANGUAGE_CODE = 'zh-hans'
+
+MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = 'upload/'
+
+CKEDITOR_CONFIGS = {  # 添加个性化的配置
+    'default': {
+        'image_previewText': '...',  # 替换图片显示区域那一串搞不懂的字符串
+        'tabSpaces': 4,
+    }
+}
 
 # simpleui 设置
 
@@ -130,9 +152,26 @@ SIMPLEUI_HOME_ICON = 'el-icon-platform-eleme'
 
 
 # 自定义simpleui 菜单
-# SIMPLEUI_CONFIG = {
+SIMPLEUI_CONFIG = {
 #     # 在自定义菜单的基础上保留系统模块
-#     'system_keep': True,
+    'system_keep': True,
+    'menus': [{
+        'name': '解决方案',
+        'icon': 'far fa-surprise',
+        'models': [{
+            'name': '百度',
+            'url': 'https://www.baidu.com/'
+        }, {
+            'name': '多吉',
+            'url': 'https://www.dogedoge.com/'
+        }, {
+            'name': '小程序源码城',
+            'url': 'https://search.chongbuluo.com/'
+        }, {
+            'name': '翁金科技',
+            'url': 'http://www.wjkj1.com/'
+        }]
+    }]
 #     'menus': [{
 #         'name': 'Simpleui',
 #         'icon': 'fas fa-code',
@@ -180,4 +219,5 @@ SIMPLEUI_HOME_ICON = 'el-icon-platform-eleme'
 #            'icon': 'far fa-surprise'
 #        }]
 #     }]
-# }
+}
+
