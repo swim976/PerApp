@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ShopInfo
+from .models import ShopInfo, AddressInfo
 # Register your models here.
 
 
@@ -14,4 +14,14 @@ class ShopInfoAdmin(admin.ModelAdmin):
     ordering = ['id']
 
 
+class AddressInfoAdmin(admin.ModelAdmin):
+    """地址管理"""
+    list_display = ['id', 'name', 'phone', 'receiving', 'address']
+    list_display_links = []
+    list_editable = []
+    search_fields = []
+    list_per_page = 15
+
+
+admin.site.register(AddressInfo, AddressInfoAdmin)
 admin.site.register(ShopInfo, ShopInfoAdmin)

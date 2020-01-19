@@ -23,3 +23,28 @@ class ShopInfo(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class AddressInfo(models.Model):
+    """
+    地址管理
+    """
+    name = models.CharField(verbose_name='收货人', max_length=128)
+    phone = models.CharField(verbose_name='收货人电话', max_length=128)
+    receiving_choices = (
+        (0, '收货时间不限'),
+        (1, '周六日/节假日收货'),
+        (2, '周一到周五收货')
+    )
+    receiving = models.IntegerField(choices=receiving_choices, verbose_name='收货时间')
+    address = models.CharField(verbose_name='收货详细地址', max_length=255)
+
+    class Meta:
+        verbose_name = '地址信息'
+        verbose_name_plural = '地址管理'
+
+    def __str__(self):
+        return self.name
+
+
+
