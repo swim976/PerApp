@@ -147,8 +147,23 @@ CKEDITOR_CONFIGS = {  # 添加个性化的配置
 }
 
 # simpleui 设置
+SIMPLEUI_HOME_ICON = 'fa fa-user'
+SIMPLEUI_ICON = {
+    'editor自传': 'fab fa-apple',
+    '自传管理': 'fa fa-adobe'
+}
+# 默认主题
+SIMPLEUI_DEFAULT_THEME = 'e-blue-pro.css'
 
-SIMPLEUI_HOME_ICON = 'el-icon-platform-eleme'
+# 修改logo
+SIMPLEUI_LOGO = 'http://webimg.xudoodoo.com/f02d11af1e6c8f41c6f37786fb218067'
+
+SIMPLEUI_HOME_INFO = False  # 服务器信息 隐藏：
+SIMPLEUI_HOME_QUICK = True  # 快速度操作
+SIMPLEUI_HOME_ACTION = True  # 最近动作
+
+SIMPLEUI_ANALYSIS = False  # 使用分析 ， 不使用
+SIMPLEUI_DEFAULT_ICON = True  # 默认图标
 
 
 # 自定义simpleui 菜单

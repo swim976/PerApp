@@ -21,6 +21,7 @@ class AddressInfoAdmin(admin.ModelAdmin):
     list_editable = []
     search_fields = []
     list_per_page = 15
+    ordering = ['id']
 
 
 admin.site.register(AddressInfo, AddressInfoAdmin)
